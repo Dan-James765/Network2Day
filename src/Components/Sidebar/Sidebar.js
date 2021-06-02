@@ -11,7 +11,7 @@ function Sidebar() {
   );
   return (
     <>
-      <div className="sticky flex-grow-0.2 text-center  rounded-lg w-2/12 ">
+      <div className=" flex-grow-0.2 text-center  rounded-lg w-2/12   ">
         <div className=" py-4 px-4  rounded-lg bg-white border border-gray-300 ">
           <div className="flex flex-col items-center  rounded-lg pb-4 ">
             <img
@@ -23,13 +23,14 @@ function Sidebar() {
               className="mb-5 object-cover border cursor-pointer "
               src="https://media-exp1.licdn.com/dms/image/C4D03AQFt_IC9LorHsA/profile-displayphoto-shrink_800_800/0/1601912891614?e=1627516800&v=beta&t=_F_yC7bMPVbqvPbGZmxnyyTj7iq9cx4Kz3EgjYxaDlI"
             />
-
-            <h2 className="font-semibold text-lg hover:underline cursor-pointer">
-              Dan James
-            </h2>
-            <h4 className="text-xs text-gray-500 cursor-pointer">
-              Software Engineer
-            </h4>
+            <div className="divide-y-2 divide-white ">
+              <h2 className="font-semibold text-lg hover:underline cursor-pointer">
+                Dan James
+              </h2>
+              <h4 className="text-xs text-gray-500 cursor-pointer ">
+                Software Engineer
+              </h4>
+            </div>
           </div>
           <hr className="border border-gray-200 w-full" />
           <div className="text-xs py-2 cursor-pointer  ">
