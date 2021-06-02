@@ -11,7 +11,7 @@ import HeaderItem from "./HeaderItem";
 function Header() {
   return (
     <>
-      <header className="flex shadow-md items-center py-2  sticky justify-center bg-white">
+      <header className="flex shadow-md items-center py-2   justify-center bg-white sticky top-0 z-50">
         <div className="flex items-center  ">
           <img
             className="object-contain h-8 cursor-pointer"
