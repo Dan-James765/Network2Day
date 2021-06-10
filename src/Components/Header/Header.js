@@ -7,8 +7,17 @@ import { IoMdBriefcase } from "react-icons/io";
 import { RiMessage2Line } from "react-icons/ri";
 import { FaBell } from "react-icons/fa";
 import HeaderItem from "./HeaderItem";
+import { useDispatch } from "react-redux";
+import { auth } from "../Firebase/firebase";
+import { logout } from "../../features/counter/userSlice";
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const logoutOfApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
   return (
     <>
       <header className="flex shadow-md items-center py-2   justify-center bg-white sticky top-0 z-50">
@@ -37,7 +46,10 @@ function Header() {
           <HeaderItem title="Notifications" Icon={FaBell} />
         </div>
         <div className="pt-1">
-          <HeaderItem avatar="https://media-exp1.licdn.com/dms/image/C4D03AQFt_IC9LorHsA/profile-displayphoto-shrink_800_800/0/1601912891614?e=1627516800&v=beta&t=_F_yC7bMPVbqvPbGZmxnyyTj7iq9cx4Kz3EgjYxaDlI" />
+          <HeaderItem
+            avatar="https://media-exp1.licdn.com/dms/image/C4D03AQFt_IC9LorHsA/profile-displayphoto-shrink_800_800/0/1601912891614?e=1627516800&v=beta&t=_F_yC7bMPVbqvPbGZmxnyyTj7iq9cx4Kz3EgjYxaDlI"
+            onClick={logoutOfApp}
+          />
         </div>
       </header>
     </>
