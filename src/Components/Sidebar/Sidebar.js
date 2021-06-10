@@ -1,8 +1,12 @@
 import React from "react";
 import { Avatar } from "@material-ui/core";
 import { BsBookmarkFill } from "react-icons/bs";
+import { selectUser } from "../../features/counter/userSlice";
+import { useSelector } from "react-redux";
 
 function Sidebar() {
+  const user = useSelector(selectUser);
+
   const recentItem = (topic) => (
     <div className="flex hover:text-linkedinblue text-gray-500 font-semibold  px-2 cursor-pointer my-2">
       <span>#</span>
@@ -21,11 +25,11 @@ function Sidebar() {
             />
             <Avatar
               className="mb-5 object-cover border cursor-pointer "
-              src="https://media-exp1.licdn.com/dms/image/C4D03AQFt_IC9LorHsA/profile-displayphoto-shrink_800_800/0/1601912891614?e=1627516800&v=beta&t=_F_yC7bMPVbqvPbGZmxnyyTj7iq9cx4Kz3EgjYxaDlI"
+              src={user.photoUrl}
             />
             <div className="divide-y-2 divide-white ">
               <h2 className="font-semibold text-lg hover:underline cursor-pointer">
-                Dan James
+                {user.displayName}
               </h2>
               <h4 className="text-xs text-gray-500 cursor-pointer ">
                 Software Engineer
