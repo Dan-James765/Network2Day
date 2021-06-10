@@ -1,15 +1,15 @@
-import React from "react";
 import AvatarXP from "./AvatarXP";
 import FeedItemIcons from "./FeedItemIcons";
 import { AiOutlineLike } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
 import { GiShare } from "react-icons/gi";
 import { MdSend } from "react-icons/md";
+import React, { forwardRef } from "react";
 
-function Post({ name, description, message, photoUrl }) {
+const Post = forwardRef(({ name, description, message }, ref) => {
   return (
     <>
-      <div className="bg-white w-w-140 py-4 rounded-lg pl-4 my-4 ">
+      <div ref={ref} className="bg-white w-w-140 py-4 rounded-lg pl-4 my-4 ">
         <div className="flex mb-2 ">
           <AvatarXP avatar="https://media-exp1.licdn.com/dms/image/C4D03AQFt_IC9LorHsA/profile-displayphoto-shrink_800_800/0/1601912891614?e=1627516800&v=beta&t=_F_yC7bMPVbqvPbGZmxnyyTj7iq9cx4Kz3EgjYxaDlI" />
           <div className="ml-2">
@@ -35,6 +35,6 @@ function Post({ name, description, message, photoUrl }) {
       </div>
     </>
   );
-}
+});
 
 export default Post;
