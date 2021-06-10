@@ -6,7 +6,6 @@ import { login, logout, selectUser } from "./features/counter/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from "react";
 import { auth } from "./Components/Firebase/firebase";
-import Widgets from "./Components/Widgets/Widgets";
 
 function App() {
   const user = useSelector(selectUser);
@@ -28,7 +27,7 @@ function App() {
         dispatch(logout());
       }
     });
-  }, []);
+  });
 
   return (
     <>
