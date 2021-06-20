@@ -3,6 +3,7 @@ import { Avatar } from "@material-ui/core";
 import { BsBookmarkFill } from "react-icons/bs";
 import { selectUser } from "../../features/counter/userSlice";
 import { useSelector } from "react-redux";
+import Feed from "../Feed/Feed";
 
 function Sidebar() {
   const user = useSelector(selectUser);
