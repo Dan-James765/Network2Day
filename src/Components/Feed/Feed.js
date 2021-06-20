@@ -1,7 +1,7 @@
 import { BsPencilSquare } from "react-icons/bs";
 import { MdPhoto } from "react-icons/md";
 import { RiVideoFill } from "react-icons/ri";
-import { FaRegCalendarCheck } from "react-icons/fa";
+import { FaPlaneArrival, FaRegCalendarCheck } from "react-icons/fa";
 import { RiArticleLine } from "react-icons/ri";
 import FeedItemIcons from "./FeedItemIcons";
 import Post from "./Post";
@@ -11,6 +11,7 @@ import firebase from "firebase";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/counter/userSlice";
 import FlipMove from "react-flip-move";
+
 
 function Feed() {
   const [input, setInput] = useState("");
@@ -59,6 +60,7 @@ function Feed() {
                   placeholder="Start a Post"
                   className="border-none flex-grow ml-2 pr-48 outline-none font-medium text cursor-pointer group-hover:bg-gray-100 transition delay-50   "
                 />
+
                 <button onClick={sendPost} className="hidden" type="submit">
                   Send
                 </button>
@@ -80,6 +82,8 @@ function Feed() {
             />
           </div>
         </div>
+      
+         
 
         <FlipMove>
           {posts.map(
