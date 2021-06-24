@@ -11,23 +11,30 @@ function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
+  
+
   useEffect(() => {
-    auth.onAuthStateChanged((userAuth) => {
+    auth.onAuthStateChanged(userAuth => {
       if (userAuth) {
-        //user is logged in
-        dispatch(
-          login({
-            email: userAuth.user.email,
-            uid: userAuth.user.uid,
-            displayName: userAuth.displayName,
-            photoURL: userAuth.photoURL,
-          })
-        );
+        //user is logged in 
+        dispatch(login({
+          email: userAuth.email, 
+          uid: userAuth.uid, 
+          displayName: userAuth.displayName, 
+          photoUrl: userAuth.photoURL, 
+        }))
+
       } else {
-        dispatch(logout());
+
+        //user is logged out 
+        dispatch(logout())
       }
-    });
-  });
+
+    })
+
+  }, [] )
+
+
 
   return (
     <>
